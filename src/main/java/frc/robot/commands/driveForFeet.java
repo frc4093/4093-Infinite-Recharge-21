@@ -26,7 +26,7 @@ public class driveForFeet extends Command {
     // private double output;
     private double error;
     private double driveVal;
-    private double turnOffsetGyro;
+    double turnOffsetGyro;
     private double initGyroAngle;
     private double currentAngle;
     private double kPGyro = .01;

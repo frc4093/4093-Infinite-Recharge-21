@@ -54,7 +54,7 @@ public class SetRPMVision extends Command {
         currentSetRPM = Robot.shooter.getSetRPM();
         //Robot.shooter.powerLevel = .2; //give my fake "PID" loop a bit of a head start
         if (Robot.limelight.targetInSight()){
-            rpm =Robot.limelight.getLimelightRPM();
+            rpm =Robot.limelight.getLimelightRPM(); //use code meant to calculate rpm based on distance
         }else{
             rpm = 2920; //10 ft line value so that if it fails simple to find
         }
