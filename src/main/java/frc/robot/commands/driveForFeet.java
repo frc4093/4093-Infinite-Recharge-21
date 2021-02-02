@@ -12,7 +12,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-
 /**
  * self explanatory this can be a lot more advanced but this will do for now
  *
@@ -26,7 +25,7 @@ public class driveForFeet extends Command {
     // private double output;
     private double error;
     private double driveVal;
-    double turnOffsetGyro;
+    // double turnOffsetGyro;
     private double initGyroAngle;
     private double currentAngle;
     private double kPGyro = .01;
@@ -58,7 +57,7 @@ public class driveForFeet extends Command {
         Robot.drive.resetVirtualEnc();
         initGyroAngle = Robot.drive.getAngle();
         currentAngle = Robot.drive.getAngle() - initGyroAngle;
-        turnOffsetGyro = 0;
+        // turnOffsetGyro = 0;
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -86,7 +85,7 @@ public class driveForFeet extends Command {
         // Robot.dash.displayData("Ft", Robot.drive.getFeetMovedFromVEnc());
         //for safe testing
         if (Math.abs(turnPower)>.5)
-            turnPower = 0;
+            turnPower = .5;
         
         Robot.drive.arcade(driveVal, turnPower,false);
     }
