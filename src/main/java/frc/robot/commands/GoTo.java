@@ -54,7 +54,7 @@ public class GoTo extends CommandGroup {
     }
 
     public double determineAngle(double xLength,double yLength,double hyp){
-        double angle = 1/Math.sin(yLength/hyp);
+        double angle = Math.toDegrees(Math.asin(yLength/hyp));
         return 0;
     }
     public int determineQuadrant(double x, double y){
