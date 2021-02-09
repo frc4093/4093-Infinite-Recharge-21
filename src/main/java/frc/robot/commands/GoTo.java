@@ -32,7 +32,7 @@ public class GoTo extends CommandGroup {
         currentY = Robot.currentY;
         double xOffsetFromRobot = (currentX-x)+.0001; //if we think of robot at (0,0) then where is x. .0001 is added to force triangle to exist
         double yOffsetFromRobot = (currentY-y)+.0001;//if we think of robot at (0,0) then where is y.
-        double hyp = Math.sqrt(Math.pow(xOffsetFromRobot,2)+Math.pow(yOffsetFromRobot,2));
+        double hyp = Math.sqrt(Math.pow(xOffsetFromRobot*kSpacing,2)+Math.pow(yOffsetFromRobot*kSpacing,2));
         double angle = 0;
         int q = determineQuadrant(xOffsetFromRobot, yOffsetFromRobot);
         distance = hyp;
