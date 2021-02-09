@@ -60,8 +60,8 @@ public static Dash dash = new Dash();
     public static double roughShotCounter; //this just helps jam code
     public final static InterpolatingTree distanceToRPM = new InterpolatingTree(40);
     public final static double rpmDistanceOffset = 0;
-    public static double currentX = 0;
-    public static double currentY = 0;
+    public static double currentX = 3; //for autonav
+    public static double currentY = 1;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
