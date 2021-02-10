@@ -64,7 +64,7 @@ public class GoTo extends CommandGroup {
             angle = Math.atan(yOffsetFromRobot/xOffsetFromRobot);
         break;
         case 2:
-           angle = 180 + Math.atan(yOffsetFromRobot/xOffsetFromRobot);
+            angle = 180 + Math.atan(yOffsetFromRobot/xOffsetFromRobot);
         break;
         case 3:
             angle = 180-Math.atan(yOffsetFromRobot/xOffsetFromRobot);

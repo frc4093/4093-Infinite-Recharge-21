@@ -161,6 +161,7 @@ public void curvature(double xSpeed, double zRotation, boolean quickTurn) {
         // Robot.dash.displayData("enc", getEnc());
         // Robot.dash.displayData("venc", getVirtualEnc());
         //why is there drift?
+        
     }
 
     public double getMotor_RPM(WPI_TalonFX motor) {
@@ -186,14 +187,8 @@ public void curvature(double xSpeed, double zRotation, boolean quickTurn) {
         return imu.getAngle();
     }
     public double getAngle360(){
-        double step1 = getAngle()%360;
-        double step2;
-        if (step1<0){
-            step2 = 360+step1; //subtracting value from 360(its negative so technically adding)
-        }else{
-            step2 = step1;
-        }
-        return step2; 
+        
+        return convertTo360(imu.getAngle());
     }
     public double convertTo360(double a){
         double step1 = a%360;
