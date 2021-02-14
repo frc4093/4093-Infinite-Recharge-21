@@ -62,7 +62,6 @@ public static Dash dash = new Dash();
     public final static double rpmDistanceOffset = 0;
     public static double currentX = 1; //for autonav
     public static double currentY = 3;
-    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.

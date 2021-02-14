@@ -200,6 +200,21 @@ public void curvature(double xSpeed, double zRotation, boolean quickTurn) {
         }
         return step2; 
     }
+    // public double convertTo360(double a){
+    //     double angle =a;
+    //     double b = angle/360;
+    //     if (angle> 0){
+    //         while (b>1){
+    //             angle -=360;
+    //         }
+    //     }else if (angle<0){
+    //         while (b<1){
+    //             angle -=360;
+    //         } 
+    //     }
+        
+    //     return angle; 
+    // }
 
 
     //sort of rough methods for autonomous use
