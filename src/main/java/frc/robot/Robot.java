@@ -76,7 +76,7 @@ intake = new Intake();
 limelight = new Limelight();
 pDP = new PDP();
 climb = new Climb();
-indexer = new Indexer();
+indexer = new Indexer(); //Something in indexer must be breaking simulator
 controlPanel = new ControlPanel();
 lights = new lights();
 
@@ -191,7 +191,7 @@ lights = new lights();
 
     @Override
     public void testPeriodic(){
-        //Scheduler.getInstance().run();
+        Scheduler.getInstance().run();
         // Robot.limelight.setCameraMode(CamMode.DRIVER);
         // Robot.limelight.setLight(LEDMode.ON);
     }
