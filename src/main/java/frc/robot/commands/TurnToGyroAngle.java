@@ -28,6 +28,7 @@ public class TurnToGyroAngle extends Command {
     private double extraSpeed;
     private double correctedDriveAngle;
     private double error;
+    private double kP =1;
     public TurnToGyroAngle(double angle, double timeout) {
         m_angle = angle;
         
@@ -55,6 +56,7 @@ public class TurnToGyroAngle extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        System.out.println("I should be moving");
         // correctedDriveAngle = Robot.drive.getAngle360();
         // extraSpeed = (Math.abs(m_angle-Math.abs(correctedDriveAngle))/180)*.4;
         // if (correctedDriveAngle > m_angle+offset || correctedDriveAngle < m_angle-offset){
@@ -69,18 +71,8 @@ public class TurnToGyroAngle extends Command {
         //     Robot.drive.arcade(0,0);
         //     count++;
         // }
-        // error = m_angle-Robot.drive.getAngle360();
-        // extraSpeed = (Math.abs(m_angle-Math.abs(Robot.drive.getAngle360())));
-        // if (Math.abs(error)>offset){
-        //     count = 0;
-        //     if (error>0){
-        //         Robot.drive.arcade(0, .15+extraSpeed,false);
-        //     }else{
-        //         Robot.drive.arcade(0, -.15-extraSpeed,false);
-        //     }
-        // }else{
-        //     count++;
-        // }
+        error = m_angle-Robot.drive.getAngle();
+        drive.tankDrive(.5*kP*error,)
     }
 
     // Make this return true when this Command no longer needs to run execute()

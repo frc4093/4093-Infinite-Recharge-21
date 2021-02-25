@@ -60,8 +60,10 @@ public static Dash dash = new Dash();
     public static double roughShotCounter; //this just helps jam code
     public final static InterpolatingTree distanceToRPM = new InterpolatingTree(40);
     public final static double rpmDistanceOffset = 0;
-    public static double currentX = 1; //for autonav
-    public static double currentY = 3;
+    public static double currentX = 0; //for autonav
+    public static double currentY = 0;
+    public static double angle;
+    public static double distance;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -76,7 +78,7 @@ intake = new Intake();
 limelight = new Limelight();
 pDP = new PDP();
 climb = new Climb();
-indexer = new Indexer(); //Something in indexer must be breaking simulator
+indexer = new Indexer();
 controlPanel = new ControlPanel();
 lights = new lights();
 
