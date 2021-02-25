@@ -72,10 +72,10 @@ private DifferentialDrive drive;
     DifferentialDriveKinematics kinematics = new DifferentialDriveKinematics(Units.inchesToMeters(28)); //TODO: check on wheel to wheel distance and update
     DifferentialDriveOdometry odometry = new DifferentialDriveOdometry(getHeading());
 
-    SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(0, 0,0); //TODO: Stil need to do a drive characterization so I can aquire necessery values
+    SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(.636, 2.35,.358); //ks kv ka
 
-    PIDController leftPIDController = new PIDController(0, 0, 0); //TODO: GET from drive characterization + tune
-    PIDController righPIDController = new PIDController(0, 0, 0); //Same as above
+    PIDController leftPIDController = new PIDController(6.38, 0, 2.9); //TODO: GET from drive characterization + tune
+    PIDController righPIDController = new PIDController(6.38, 0, 2.9); 
 
     Pose2d pose;
 public Drive() {
@@ -152,6 +152,9 @@ public DifferentialDriveWheelSpeeds getSpeeds(){
 public SimpleMotorFeedforward getFeedForward(){
     return feedforward;
 } 
+public DifferentialDriveKinematics getKinematics(){
+    return kinematics;
+}
 public void arcade(double xSpeed, double zRotation) {
     // drive.arcadeDrive(xSpeed, zRotation);
     Drive.xSpeed = xSpeed;

@@ -14,20 +14,30 @@ import edu.wpi.first.hal.FRCNetComm.tInstances;
 import edu.wpi.first.hal.FRCNetComm.tResourceType;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
+import java.util.Arrays;
+
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.controller.RamseteController;
+import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.trajectory.Trajectory;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryParameterizer.TrajectoryGenerationException;
+import edu.wpi.first.wpilibj.util.Units;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import frc.robot.subsystems.Limelight.CamMode;
 import frc.robot.subsystems.Limelight.LEDMode;
-
+import edu.wpi.first.wpilibj.geometry.Pose2d;
+import edu.wpi.first.wpilibj.geometry.Rotation2d;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -196,5 +206,17 @@ lights = new lights();
         Scheduler.getInstance().run();
         // Robot.limelight.setCameraMode(CamMode.DRIVER);
         // Robot.limelight.setLight(LEDMode.ON);
+    }
+    public Command getTrajectoryTestAuto(){
+        TrajectoryConfig config = new TrajectoryConfig(Units.feetToMeters(2), Units.feetToMeters(2));
+        config.setKinematics(drive.getKinematics());
+
+        Trajectory trajectory = TrajectoryGenerator.generateTrajectory(
+            Arrays.asList(new Pose2d(), new Pose2d(1.0,0,new Rotation2d())),
+            config
+        );
+        RamseteController command = new RamseteController(){
+            
+        }
     }
 }
