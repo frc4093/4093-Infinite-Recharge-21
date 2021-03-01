@@ -171,7 +171,6 @@ bButtonAutoAlign.whileHeld(new AutoAlign());
         // SmartDashboard.putData("SixBallAutoRendezvous", new SixBallAutoRendezvous());
         // SmartDashboard.putData("initialShotDone", new initialShotDone());
         // SmartDashboard.putData("pauseShoot", new pauseShoot());
-        // SmartDashboard.putData("GoTo", new GoTo());
         // SmartDashboard.putData("BarrelRacing", new BarrelRacing());
         // SmartDashboard.putData("TurnToGyroTwo", new TurnToGyroTwo());
         // SmartDashboard.putData("goToCalculation", new goToCalculation());
