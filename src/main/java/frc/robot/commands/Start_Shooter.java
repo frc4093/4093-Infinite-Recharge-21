@@ -49,7 +49,7 @@ public class Start_Shooter extends Command {
     protected void execute() {
         double currentRPM = Robot.shooter.getShooter_RPM();
         Robot.shooter.shootAtRPM_PID();
-        Robot.dash.displayData("set rpm", Robot.shooter.setRPM);
+        // Robot.dash.displayData("set rpm", Robot.shooter.setRPM);
         Robot.dash.displayData("RPM", currentRPM); //makes a cool graph we can get an idea of the adjustments needed for my "proportional" control
         if (Robot.shooter.preciseShotReady() && m_Quit_When_Stable){
             count++;

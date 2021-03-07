@@ -12,33 +12,30 @@ package frc.robot;
 
 import edu.wpi.first.hal.FRCNetComm.tInstances;
 import edu.wpi.first.hal.FRCNetComm.tResourceType;
-import edu.wpi.first.networktables.NetworkTableInstance;
-
-import static edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator.generateTrajectory;
-
-import java.util.Arrays;
-
-import com.ctre.phoenix.motorcontrol.NeutralMode;
-
 import edu.wpi.first.hal.HAL;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.controller.RamseteController;
-import edu.wpi.first.wpilibj.geometry.Rotation2d;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.trajectory.Trajectory;
-import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
-import edu.wpi.first.wpilibj.trajectory.TrajectoryParameterizer.TrajectoryGenerationException;
-import edu.wpi.first.wpilibj.util.Units;
-import frc.robot.commands.*;
-import frc.robot.subsystems.*;
+import frc.robot.commands.AutonomousCommand;
+import frc.robot.commands.BarrelRacing;
+import frc.robot.commands.SixBallAutoLT;
+import frc.robot.commands.SixBallAutoRendezvous;
+import frc.robot.commands.TargetPosAuto;
+import frc.robot.commands.passAutoLine;
+import frc.robot.subsystems.Climb;
+import frc.robot.subsystems.ControlPanel;
+import frc.robot.subsystems.Drive;
+import frc.robot.subsystems.Indexer;
+import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.Limelight.CamMode;
 import frc.robot.subsystems.Limelight.LEDMode;
-import edu.wpi.first.wpilibj.geometry.Pose2d;
-import edu.wpi.first.wpilibj.geometry.Rotation2d;
+import frc.robot.subsystems.PDP;
+import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.lights;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -47,7 +44,7 @@ import edu.wpi.first.wpilibj.geometry.Rotation2d;
  * the project.
  */
 public class Robot extends TimedRobot {
-    RobotContainer container;
+    // RobotContainer container;
     Command autonomousCommand;
     SendableChooser<Command> chooser = new SendableChooser<>();
     public static OI oi;
@@ -214,14 +211,14 @@ lights = new lights();
         // Robot.limelight.setLight(LEDMode.ON);
     }
     
-    public Command getTrajectoryTestAuto(){
-        TrajectoryConfig config = new TrajectoryConfig(Units.feetToMeters(2), Units.feetToMeters(2));
-        config.setKinematics(drive.getKinematics());
+    // public Command getTrajectoryTestAuto(){
+    //     TrajectoryConfig config = new TrajectoryConfig(Units.feetToMeters(2), Units.feetToMeters(2));
+    //     config.setKinematics(drive.getKinematics());
 
-        Trajectory trajectory = generateTrajectory(
-            Arrays.asList(new Pose2d(), new Pose2d(1.0,0,new Rotation2d())),
-            config
-        );
+    //     Trajectory trajectory = generateTrajectory(
+    //         Arrays.asList(new Pose2d(), new Pose2d(1.0,0,new Rotation2d())),
+    //         config
+    //     );
     //     RamseteController command = new RamseteController(
     //         trajectory,
     //         drive::getPose,

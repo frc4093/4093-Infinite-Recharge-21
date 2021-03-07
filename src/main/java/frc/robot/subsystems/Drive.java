@@ -204,6 +204,7 @@ public void curvature(double xSpeed, double zRotation, boolean quickTurn) {
         //why is there drift?
         Robot.dash.displayData("fake gyro",getFakeAngle());
         
+        
     }
 
     public double getMotor_RPM(WPI_TalonFX motor) {

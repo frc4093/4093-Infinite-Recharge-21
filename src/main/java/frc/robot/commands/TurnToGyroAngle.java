@@ -27,12 +27,12 @@ public class TurnToGyroAngle extends Command {
     private double offset =1.1;
     private double extraSpeed;
     private double correctedDriveAngle;
-    private double error;
+    // private double error;
     private double diff;
-    private double kP =3;
-    private double gyro;
+    // private double kP =3;
+    // private double gyro;
     private boolean grabAngleFromRobot;
-    private boolean initDone;
+    // private boolean initDone;
     public TurnToGyroAngle(double angle, double timeout) {
         m_angle = angle;
         
@@ -65,20 +65,19 @@ public class TurnToGyroAngle extends Command {
             m_angle = Robot.angle;
         }
         Robot.drive.setFakeAngle(Robot.drive.getAngle360());
-        diff = Robot.drive.getFakeAngle()-m_angle;
+        diff = Robot.drive.getFakeAngle()- m_angle;
         if (Math.abs(diff)>180){
-            m_angle = -(360-m_angle);
+            m_angle = -Math.abs(360-m_angle);
         }
+        
+        Robot.dash.displayData("m_angle", m_angle);
         
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if (initDone == false){
-            initialize();
-        }
-        gyro = Robot.drive.getFakeAngle();
+        // gyro = Robot.drive.getFakeAngle();
         
         correctedDriveAngle = Robot.drive.getFakeAngle();
         extraSpeed = (Math.abs(m_angle-Math.abs(correctedDriveAngle))/180)*.4;
@@ -111,6 +110,7 @@ public class TurnToGyroAngle extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
+        
         return count>10 || isTimedOut(); //this probably isnt the best way but easiest way I could think of to check if stable
     }
 
@@ -119,7 +119,6 @@ public class TurnToGyroAngle extends Command {
     protected void end() {
         Robot.drive.arcade(0, 0);
         System.out.println("DONE TURNING");
-        initDone = false;
     }
 
     // Called when another command which requires one or more of the same

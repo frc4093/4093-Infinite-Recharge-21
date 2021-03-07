@@ -10,8 +10,8 @@
 
 
 package frc.robot.commands;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
+// import edu.wpi.first.wpilibj.Joystick;
+// import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
@@ -112,7 +112,7 @@ public class XDrive extends Command {
         turnDir = turn/Math.abs(turn);
         drivePlusTrigger = drive*(.42+(.58*highTrigger));
         turnWithoutTrigger = turn*.4;
-        turnPlusTrigger = turn*(.35+(.3*highTrigger));
+        turnPlusTrigger = turn*(.3+(.3*highTrigger));
         // if (drive<.1){
         //     turnWithoutTrigger=turn;
         // }
