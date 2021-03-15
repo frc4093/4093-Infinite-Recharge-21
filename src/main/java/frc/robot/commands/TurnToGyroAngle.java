@@ -82,7 +82,7 @@ public class TurnToGyroAngle extends Command {
         // gyro = Robot.drive.getFakeAngle();
         
         correctedDriveAngle = Robot.drive.getFakeAngle();
-        extraSpeed = (Math.abs(m_angle-Math.abs(correctedDriveAngle))/180)*.4;
+        extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*.4;
         
         if (correctedDriveAngle > m_angle+offset || correctedDriveAngle < m_angle-offset){
             count = 0; //reset count
@@ -113,7 +113,7 @@ public class TurnToGyroAngle extends Command {
     @Override
     protected boolean isFinished() {
         
-        return count>10 || isTimedOut(); //this probably isnt the best way but easiest way I could think of to check if stable
+        return count>5 || isTimedOut(); //this probably isnt the best way but easiest way I could think of to check if stable
     }
 
     // Called once after isFinished returns true

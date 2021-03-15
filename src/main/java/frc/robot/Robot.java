@@ -68,9 +68,9 @@ public static Dash dash = new Dash();
     public static boolean isAuto;
     public static double roughShotCounter; //this just helps jam code
     public final static InterpolatingTree distanceToRPM = new InterpolatingTree(40);
-    public final static double rpmDistanceOffset = 0;
-    public static double currentX = 0; //for autonav
-    public static double currentY = 0;
+    public final static double rpmDistanceOffset = .5;
+    public static double currentX = 0; //for autonav its wrong (but kinda a work around)
+    public static double currentY = 3;
     public static double angle;
     public static double distance;
     /**

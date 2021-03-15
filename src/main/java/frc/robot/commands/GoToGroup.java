@@ -35,7 +35,7 @@ public class GoToGroup extends CommandGroup {
     addSequential(new goToCalculation(x,y));
     addSequential(new TurnToGyroAngle()); //will grab angle from Robot.angle
     addSequential(new driveForFeet()); //will grab distance from Robot.distance
-
+    // addSequential(new PauseFor(1));
         
     } 
     // public double createDistance(double xLength, double yLength,double hyp) {

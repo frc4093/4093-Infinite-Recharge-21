@@ -51,9 +51,9 @@ public class goToCalculation extends Command {
         // lastStep = Robot.drive.getAngle360();
         currentX = Robot.currentX;
         currentY = Robot.currentY;
-        double xOffsetFromRobot = (x-currentX)+.00000001; //if we think of robot at (0,0) then where is x. .0001 is added to force triangle to exist
-        double yOffsetFromRobot = (y-currentY)+.00000001;//if we think of robot at (0,0) then where is y. 
-        double hyp = Math.sqrt(Math.pow(xOffsetFromRobot*kSpacing,2)+Math.pow(yOffsetFromRobot*kSpacing,2));
+        double xOffsetFromRobot = (x-currentX); //if we think of robot at (0,0) then where is x.
+        double yOffsetFromRobot = (y-currentY);//if we think of robot at (0,0) then where is y. 
+        double hyp = Math.sqrt(Math.pow((xOffsetFromRobot*kSpacing),2)+Math.pow((yOffsetFromRobot*kSpacing),2));
         
         int q = determineQuadrant(xOffsetFromRobot, yOffsetFromRobot);
         distance = hyp;
@@ -90,7 +90,7 @@ public class goToCalculation extends Command {
             angle = 180+Math.atan(yOffsetFromRobot/xOffsetFromRobot)*(180/Math.PI);
         break;
         case 4:
-            angle = 360-Math.atan(yOffsetFromRobot/xOffsetFromRobot)*(180/Math.PI);
+            angle = 360+Math.atan(yOffsetFromRobot/xOffsetFromRobot)*(180/Math.PI);
         break;
         
         }
