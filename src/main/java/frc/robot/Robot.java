@@ -144,6 +144,9 @@ lights = new lights();
         NetworkTableInstance.getDefault().getTable("limelight").getEntry("stream").setNumber(2);
         Robot.dash.displayData("set rpm", 0);
         Robot.dash.displayData("RPM", 0); //makes a cool graph we can get an idea of the adjustments needed for my "proportional" control
+        Robot.dash.displayData("x",Robot.currentX);
+        Robot.dash.displayData("y",Robot.currentY);
+
     }
 
     /**
