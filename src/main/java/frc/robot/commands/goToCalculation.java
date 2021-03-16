@@ -57,9 +57,9 @@ public class goToCalculation extends Command {
         int q = determineQuadrant(xOffsetFromRobot, yOffsetFromRobot);
         distance = hyp;
         double angle = determineAngle(xOffsetFromRobot, yOffsetFromRobot, q);
-        System.out.println("GoTo angle is: " +angle);
-        System.out.println("distance is: "+ distance);
-        System.out.println("q is "+q);
+        // System.out.println("GoTo angle is: " +angle);
+        // System.out.println("distance is: "+ distance);
+        // System.out.println("q is "+q);
         Robot.dash.displayData("GoTo Angle",angle);
         Robot.dash.displayData("distance",distance);
         Robot.currentX = x;

@@ -42,7 +42,6 @@ private WPI_TalonFX shooterFalcon;
     public final int kSensorUnitsPerRotation = 2048;
     public final double kRPMConstant = 600 / kSensorUnitsPerRotation;
     public static double setRPM;
-    private static double currentRPM;
     public static double powerLevel;
     public static int shooterCount;
     private final double kP = 0.27;

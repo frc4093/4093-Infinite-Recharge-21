@@ -73,7 +73,6 @@ public class driveForFeet extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        System.out.println("HELLO");
         currentAngle = Robot.drive.getAngle() - initGyroAngle;
         error = Math.abs(m_ft) - Math.abs(Robot.drive.getFeetMovedFromVEnc());
         turnPower = -currentAngle*kPGyro; //should do the trick
