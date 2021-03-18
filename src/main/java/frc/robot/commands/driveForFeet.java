@@ -98,6 +98,7 @@ public class driveForFeet extends Command {
             turnPower = .5;
         
         Robot.drive.arcade(driveVal, turnPower,false);
+        // Robot.drive.setOutput(Robot.drive.getLeftPIDController(),Robot.drive.getRightPIDController();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -105,6 +106,7 @@ public class driveForFeet extends Command {
     protected boolean isFinished(){
         //doesnt matter what direction if we do it like this
         return (Math.abs(m_ft) < Math.abs(Robot.drive.getFeetMovedFromVEnc()));
+        // return (Robot.drive.getLeftPIDController().atSetpoint()); //idk
     }
 
     // Called once after isFinished returns true

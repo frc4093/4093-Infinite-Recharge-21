@@ -69,8 +69,8 @@ public static Dash dash = new Dash();
     public static double roughShotCounter; //this just helps jam code
     public final static InterpolatingTree distanceToRPM = new InterpolatingTree(40);
     public final static double rpmDistanceOffset = .5;
-    public static double currentX = 0; //for autonav its wrong (but kinda a work around)
-    public static double currentY = 3;
+    public static double currentX; 
+    public static double currentY;
     public static double angle;
     public static double distance;
     /**
@@ -144,6 +144,8 @@ lights = new lights();
         NetworkTableInstance.getDefault().getTable("limelight").getEntry("stream").setNumber(2);
         Robot.dash.displayData("set rpm", 0);
         Robot.dash.displayData("RPM", 0); //makes a cool graph we can get an idea of the adjustments needed for my "proportional" control
+        currentX = 1.5;
+        currentY = 3;
         Robot.dash.displayData("x",Robot.currentX);
         Robot.dash.displayData("y",Robot.currentY);
 
