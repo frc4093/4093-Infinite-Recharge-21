@@ -51,17 +51,30 @@ public class BarrelRacing extends CommandGroup {
         // addSequential(new GoToGroup(0, 2));
         // addSequential(new GoToGroup(0,0));
         //starts at 1.5,3
-        addSequential(new GoToGroup(6.5,3)); //1
-        addSequential(new GoToGroup(6.5,5.5)); //2
-        addSequential(new GoToGroup(3.5,5.5)); //3
-        addSequential(new GoToGroup(3.5, 3)); //4
-        addSequential(new GoToGroup(9.5,3)); //5
-        addSequential(new GoToGroup(9.5,.5)); //6
-        addSequential(new GoToGroup(5,.5)); //7
-        addSequential(new GoToGroup(10.5,6.5)); //8
-        addSequential(new GoToGroup(12,3.5)); //9
-        addSequential(new GoToGroup(10,3)); //10
-        addSequential(new GoToGroup(1, 3));
-        // addSequential(new GoToGroup(10, 3));
+        // addSequential(new GoToGroup(6.5,3)); //1
+        // addSequential(new GoToGroup(6.5,5.5)); //2
+        // addSequential(new GoToGroup(3.5,5.5)); //3
+        // addSequential(new GoToGroup(3.5, 3)); //4
+        // addSequential(new GoToGroup(9.5,3)); //5
+        // addSequential(new GoToGroup(9.5,.5)); //6
+        // addSequential(new GoToGroup(5,.5)); //7
+        // addSequential(new GoToGroup(10.5,6.5)); //8
+        // addSequential(new GoToGroup(12,3.5)); //9
+        // addSequential(new GoToGroup(10,3)); //10
+        // addSequential(new GoToGroup(1, 3));
+        // // addSequential(new GoToGroup(10, 3));
+        // addSequential(new GoToGroup(1.5, 3)); //1
+        addSequential(new GoToGroup(6, 3)); //2
+        addSequential(new GoToGroup(6, 5)); //3
+        addSequential(new GoToGroup(4, 5)); //4
+        addSequential(new GoToGroup(4, 3)); //5
+        addSequential(new GoToGroup(9, 3)); //6
+        addSequential(new GoToGroup(9, 1)); //7
+        addSequential(new GoToGroup(6, 1)); //8
+        addSequential(new GoToGroup(9, 5)); //9
+        addSequential(new GoToGroup(11, 5)); //10
+        addSequential(new GoToGroup(11, 3)); //11
+        addSequential(new GoToGroup(1.5, 3)); //12
+
     } 
 }

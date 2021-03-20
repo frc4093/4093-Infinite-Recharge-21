@@ -51,8 +51,8 @@ public class goToCalculation extends Command {
         // lastStep = Robot.drive.getAngle360();
         currentX = Robot.currentX;
         currentY = Robot.currentY;
-        double xOffsetFromRobot = (x-currentX); //if we think of robot at (0,0) then where is x.
-        double yOffsetFromRobot = (y-currentY);//if we think of robot at (0,0) then where is y. 
+        double xOffsetFromRobot = (x-currentX)+.001; //if we think of robot at (0,0) then where is x.
+        double yOffsetFromRobot = (y-currentY)+.001;//if we think of robot at (0,0) then where is y. 
         double hyp = Math.sqrt(Math.pow((xOffsetFromRobot*kSpacing),2)+Math.pow((yOffsetFromRobot*kSpacing),2));
         int q = determineQuadrant(xOffsetFromRobot, yOffsetFromRobot);
         distance = hyp;
