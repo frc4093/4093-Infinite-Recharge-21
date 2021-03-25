@@ -98,7 +98,7 @@ public class driveForFeet extends Command {
             turnPower = .5;
         
         Robot.drive.arcade(driveVal, turnPower,false);
-        // Robot.drive.setOutput(Robot.drive.getLeftPIDController(),Robot.drive.getRightPIDController();
+        // Robot.drive.pidDriveStraight(m_ft*Robot.drive.kDriveEncoderToFt);
     }
 
     // Make this return true when this Command no longer needs to run execute()
