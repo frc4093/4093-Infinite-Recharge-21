@@ -21,9 +21,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.BarrelRacing;
+import frc.robot.commands.SalamPath;
 import frc.robot.commands.SixBallAutoLT;
 import frc.robot.commands.SixBallAutoRendezvous;
 import frc.robot.commands.TargetPosAuto;
+import frc.robot.commands.bouncePath;
 import frc.robot.commands.passAutoLine;
 import frc.robot.subsystems.Climb;
 import frc.robot.subsystems.ControlPanel;
@@ -135,7 +137,10 @@ lights = new lights();
         chooser.addOption("Six Ball LT", new SixBallAutoLT());
         chooser.addOption("Target pos", new TargetPosAuto());
         chooser.addOption("Rendezvous", new SixBallAutoRendezvous());
-        chooser.addOption("Barrel Racing ",new BarrelRacing()); //WIP
+        chooser.addOption("Barrel Racing ",new BarrelRacing()); //WORKS
+        chooser.addOption("Salom", new SalamPath());
+        chooser.addOption("bounce", new bouncePath());
+
         SmartDashboard.putData("Auto mode", chooser);
         Robot.dash.displayData("Pause", 0); //to be flexible for other teams we could maybe pause our autos at start
         Robot.climb.setLeftEnc(0);

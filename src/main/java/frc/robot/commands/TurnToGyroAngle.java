@@ -66,11 +66,19 @@ public class TurnToGyroAngle extends Command {
         }
         Robot.drive.setFakeAngle(Robot.drive.getAngle360());
         diff = Robot.drive.getFakeAngle()- m_angle;
-        if (diff>180){
-            m_angle +=360; //I think this is what I was going for not sure why I had it so weird before.
-        }else if (diff<-180){
-            m_angle -=360; 
+        // if (diff>180){
+        //     m_angle +=360; //I think this is what I was going for not sure why I had it so weird before.
+        // }else if (diff<-180){
+        //     m_angle -=360; 
+        // }
+        if (diff>95){
+            m_angle += 180;
+            Robot.distance = -Robot.distance;
+        } else if (diff <-95){
+            m_angle -= 180;
+            Robot.distance = -Robot.distance;
         }
+        
         
         Robot.dash.displayData("m_angle", m_angle);
         

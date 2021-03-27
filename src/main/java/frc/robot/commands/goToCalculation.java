@@ -68,7 +68,6 @@ public class goToCalculation extends Command {
         Robot.distance = distance;
         Robot.dash.displayData("x",Robot.currentX);
         Robot.dash.displayData("y",Robot.currentY);
-
     }
 
     // Called repeatedly when this Command is scheduled to run
