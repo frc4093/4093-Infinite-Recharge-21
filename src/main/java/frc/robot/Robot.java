@@ -23,6 +23,7 @@ import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.BarrelRacing;
 import frc.robot.commands.SalamPath;
 import frc.robot.commands.SixBallAutoLT;
+import frc.robot.commands.SixBallAutoRT;
 import frc.robot.commands.SixBallAutoRendezvous;
 import frc.robot.commands.TargetPosAuto;
 import frc.robot.commands.bouncePath;
@@ -118,6 +119,7 @@ lights = new lights();
         distanceToRPM.put(234.0,3500+rpmDistanceOffset);
         distanceToRPM.put(244.0,3550.0+rpmDistanceOffset);
         distanceToRPM.put(286.0, 3640.0+rpmDistanceOffset);
+
         
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
@@ -140,7 +142,7 @@ lights = new lights();
         chooser.addOption("Barrel Racing ",new BarrelRacing()); //WORKS
         chooser.addOption("Salom", new SalamPath());
         chooser.addOption("bounce", new bouncePath());
-
+        chooser.addOption("SHOOT", new SixBallAutoRT()); // TODO: I will update command name later
         SmartDashboard.putData("Auto mode", chooser);
         Robot.dash.displayData("Pause", 0); //to be flexible for other teams we could maybe pause our autos at start
         Robot.climb.setLeftEnc(0);
