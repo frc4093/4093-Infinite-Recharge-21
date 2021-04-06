@@ -47,15 +47,15 @@ public class bouncePath extends CommandGroup {
         addSequential(new GoToGroup(1.8, 3));
         addSequential(new GoToGroup(2.5, 2.5));
         addSequential(new GoToGroup(3, 1));
-        addSequential(new GoToGroup(5.5, 5.5));
+        addSequential(new GoToGroup(4.5, 5.5));
         addSequential(new GoToGroup(6, 4));
         addSequential(new GoToGroup(6, 1));
-        addSequential(new GoToGroup(6, 4));
+        // addSequential(new GoToGroup(6.25, 5));
         addSequential(new GoToGroup(7, 5));
-        addSequential(new GoToGroup(8, 5));
-        addSequential(new GoToGroup(9, 4));
-        addSequential(new GoToGroup(9, 1));
-        addSequential(new GoToGroup(9, 3));
-        addSequential(new GoToGroup(11, 3));
+        // addSequential(new GoToGroup(8, 5));
+        addSequential(new GoToGroup(9, 5));
+        addSequential(new GoToGroup(9.25, 0)); //moved everything -1 cause it seems to slip
+        addSequential(new GoToGroup(9.25, 1.5));
+        addSequential(new GoToGroup(11, 1.5));
     } 
 }

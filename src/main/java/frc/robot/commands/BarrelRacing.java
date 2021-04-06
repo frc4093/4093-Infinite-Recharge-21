@@ -74,8 +74,8 @@ public class BarrelRacing extends CommandGroup {
         addSequential(new GoToGroup(4.5, 1)); //8
         addSequential(new GoToGroup(9.5, 5.5)); //9
         // addSequential(new GoToGroup(11, 5)); //10
-        addSequential(new GoToGroup(11, 3)); //11
-        addSequential(new GoToGroup(1, 3)); //12
+        addSequential(new GoToGroup(11, 2.5)); //11
+        addSequential(new GoToGroup(.5, 2.3)); //12
 
     } 
 }

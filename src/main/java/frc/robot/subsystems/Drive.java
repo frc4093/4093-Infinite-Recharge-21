@@ -87,9 +87,10 @@ private DifferentialDrive drive;
 
     // SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(.636, 2.35,.358); //ks kv ka
 
-    PIDController leftPIDController = new PIDController(0.000017, 0.005, 0); //TODO: Calibrate a bit
+    PIDController leftPIDController = new PIDController(0.0000155, 0.000000, 0); //TODO: Calibrate a bit
     PIDController righPIDController = new PIDController(.00007, 0.0000, 0); 
-    PIDController shortPIDController = new PIDController(.00009, 0.0000, 0);
+    
+    // PIDController shortPIDController = new PIDController(.00009, 0.0000, 0);
     
     Pose2d pose;
     LiveWindow lWindow;
@@ -146,7 +147,7 @@ drive.setMaxOutput(1.0);
     SmartDashboard.putData(leftPIDController);
     SmartDashboard.putData(righPIDController);
     leftPIDController.setTolerance(kSensorUnitsPerRotation*2);
-    leftPIDController.setIntegratorRange(-.17, .17);
+    leftPIDController.setIntegratorRange(-.6, .6);
     falconFL.config_kP(0, kP);
     falconFR.config_kP(0, kP);
 
@@ -164,6 +165,7 @@ drive.setMaxOutput(1.0);
 
     falconFL.config_IntegralZone(0, izone);
     falconFR.config_IntegralZone(0, izone);
+    
 }
 
 @Override

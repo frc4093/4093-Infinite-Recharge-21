@@ -64,13 +64,16 @@ public class TurnToGyroAngle extends Command {
         if (grabAngleFromRobot){
             m_angle = Robot.angle;
         }
+        
         Robot.drive.setFakeAngle(Robot.drive.getAngle360());
-        diff = Robot.drive.getFakeAngle()- m_angle;
-        // if (diff>180){
-        //     m_angle +=360; //I think this is what I was going for not sure why I had it so weird before.
-        // }else if (diff<-180){
-        //     m_angle -=360; 
-        // }
+        double fakeAngle = Robot.drive.getFakeAngle();
+        diff = fakeAngle- m_angle;
+        if (diff>180){
+            m_angle +=360; //I think this is what I was going for not sure why I had it so weird before.
+        }else if (diff<-180){
+            m_angle -=360; 
+        }
+        diff = fakeAngle- m_angle;
         if (diff>95){
             m_angle += 180;
             Robot.distance = -Robot.distance;
@@ -90,10 +93,10 @@ public class TurnToGyroAngle extends Command {
         // gyro = Robot.drive.getFakeAngle();
         
         correctedDriveAngle = Robot.drive.getFakeAngle();
-        if (Math.abs(m_angle-correctedDriveAngle)>45){
-            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*45;
+        if (Math.abs(m_angle-correctedDriveAngle)>50){
+            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*55;
         }else{
-            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*.35;
+            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*.3;
         }
         if (m_angle>correctedDriveAngle){
             Robot.drive.arcade(0, .142+extraSpeed,false);

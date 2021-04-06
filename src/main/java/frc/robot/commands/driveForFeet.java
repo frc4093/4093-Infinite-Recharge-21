@@ -49,11 +49,11 @@ public class driveForFeet extends Command {
     public driveForFeet(double ft,double speed){
         m_ft = ft;
         m_speed = speed;
-        requires(Robot.drive);
+        
         grabFromRobot = false;
     }
     public driveForFeet(){
-        m_ft =0;
+        m_ft = 0;
         m_speed = .6;
         grabFromRobot = true;
     }
@@ -74,40 +74,40 @@ public class driveForFeet extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        // currentAngle = Robot.drive.getAngle() - initGyroAngle;
-        // error = Math.abs(m_ft) - Math.abs(Robot.drive.getFeetMovedFromVEnc());
-        // turnPower = -currentAngle*kPGyro; //should do the trick
-        // if (m_ft > 0){
-        //     driveVal = -.15-kP*error;
-        //     //Robot.drive.arcade(driveVal, 0,false);
-        //     if (Math.abs(driveVal)>Math.abs(m_speed)){
-        //         driveVal = -Math.abs(m_speed);
-        //     }
+        currentAngle = Robot.drive.getAngle() - initGyroAngle;
+        error = Math.abs(m_ft) - Math.abs(Robot.drive.getFeetMovedFromVEnc());
+        turnPower = -currentAngle*kPGyro; //should do the trick
+        if (m_ft > 0){
+            driveVal = -.15-kP*error;
+            //Robot.drive.arcade(driveVal, 0,false);
+            if (Math.abs(driveVal)>Math.abs(m_speed)){
+                driveVal = -Math.abs(m_speed);
+            }
             
-        // }
-        // if (m_ft < 0){
-        //     driveVal = .15+kP*error;
-        //     if (Math.abs(driveVal)>Math.abs(m_speed)){
-        //         driveVal = Math.abs(m_speed);
-        //     }
-        //     //Robot.drive.arcade(driveVal, 0,false);
-        // }
-        // // Robot.dash.displayData("currentGyroFromDFF", turnOffsetGyro);
-        // // Robot.dash.displayData("Ft", Robot.drive.getFeetMovedFromVEnc());
-        // //for safe testing
-        // if (Math.abs(turnPower)>.5)
-        //     turnPower = turnPower/Math.abs(turnPower)*.5; //took off .5 multiplier to test faster turning we need to be quicker 
+        }
+        if (m_ft < 0){
+            driveVal = .15+kP*error;
+            if (Math.abs(driveVal)>Math.abs(m_speed)){
+                driveVal = Math.abs(m_speed);
+            }
+            //Robot.drive.arcade(driveVal, 0,false);
+        }
+        // Robot.dash.displayData("currentGyroFromDFF", turnOffsetGyro);
+        // Robot.dash.displayData("Ft", Robot.drive.getFeetMovedFromVEnc());
+        //for safe testing
+        if (Math.abs(turnPower)>.5)
+            turnPower = turnPower/Math.abs(turnPower)*.5; //took off .5 multiplier to test faster turning we need to be quicker 
         
-        // Robot.drive.arcade(driveVal, turnPower,false);
-        Robot.drive.pidDriveStraight(m_ft/Robot.drive.kDriveEncoderToFt);
+        Robot.drive.arcade(driveVal, turnPower,false);
+        // Robot.drive.pidDriveStraight(m_ft/Robot.drive.kDriveEncoderToFt);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished(){
         //doesnt matter what direction if we do it like this
-        // return (Math.abs(m_ft) <= Math.abs(Robot.drive.getFeetMovedFromVEnc()));
-        return (Robot.drive.getLeftPIDController().atSetpoint()); //idk
+        return (Math.abs(m_ft) <= Math.abs(Robot.drive.getFeetMovedFromVEnc()));
+        // return (Robot.drive.getLeftPIDController().atSetpoint()); //idk
         // return false; //just testing
     // Called once after isFinished returns true
     }
