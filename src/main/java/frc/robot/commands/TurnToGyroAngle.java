@@ -93,10 +93,10 @@ public class TurnToGyroAngle extends Command {
         // gyro = Robot.drive.getFakeAngle();
         
         correctedDriveAngle = Robot.drive.getFakeAngle();
-        if (Math.abs(m_angle-correctedDriveAngle)>50){
-            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*55;
+        if (Math.abs(m_angle-correctedDriveAngle)>60){
+            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*.5;
         }else{
-            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*.3;
+            extraSpeed = (Math.abs(m_angle-correctedDriveAngle)/180)*.38;
         }
         if (m_angle>correctedDriveAngle){
             Robot.drive.arcade(0, .142+extraSpeed,false);

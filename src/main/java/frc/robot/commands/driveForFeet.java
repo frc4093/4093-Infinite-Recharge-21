@@ -54,7 +54,7 @@ public class driveForFeet extends Command {
     }
     public driveForFeet(){
         m_ft = 0;
-        m_speed = .6;
+        m_speed = .92;
         grabFromRobot = true;
     }
 

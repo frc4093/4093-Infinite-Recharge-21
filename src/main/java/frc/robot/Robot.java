@@ -106,21 +106,28 @@ lights = new lights();
 
         // So these worked on somewhat ok condition not so accurate(shoots high) on beat up ones
         
-        distanceToRPM.put(47.0,0.0); //cant shoot
+        // distanceToRPM.put(47.0,0.0); //cant shoot
+        // distanceToRPM.put(54.999,0.0+rpmDistanceOffset);
+        // distanceToRPM.put(55.0, 4400.0+rpmDistanceOffset); //safe mininum
+        // distanceToRPM.put(61.0,3400.0+rpmDistanceOffset); 
+        // distanceToRPM.put(83.0,2910.0+rpmDistanceOffset);
+        // distanceToRPM.put(120.0, 2920.0+rpmDistanceOffset);
+        // distanceToRPM.put(130.0, 2925.0+rpmDistanceOffset);
+        // distanceToRPM.put(140.0,2930.0+rpmDistanceOffset);
+        // distanceToRPM.put(178.0,3100.0+rpmDistanceOffset); //3152 3030
+        // distanceToRPM.put(203.0,3080.0+rpmDistanceOffset);
+        // distanceToRPM.put(234.0,3500+rpmDistanceOffset);
+        // distanceToRPM.put(244.0,3550.0+rpmDistanceOffset);
+        // distanceToRPM.put(286.0, 3640.0+rpmDistanceOffset);
+
+        //interstellar
+         distanceToRPM.put(47.0,0.0); //cant shoot
         distanceToRPM.put(54.999,0.0+rpmDistanceOffset);
         distanceToRPM.put(55.0, 4400.0+rpmDistanceOffset); //safe mininum
-        distanceToRPM.put(61.0,3400.0+rpmDistanceOffset); 
-        distanceToRPM.put(83.0,2910.0+rpmDistanceOffset);
-        distanceToRPM.put(120.0, 2920.0+rpmDistanceOffset);
-        distanceToRPM.put(130.0, 2925.0+rpmDistanceOffset);
-        distanceToRPM.put(140.0,2930.0+rpmDistanceOffset);
-        distanceToRPM.put(178.0,3100.0+rpmDistanceOffset); //3152 3030
-        distanceToRPM.put(203.0,3080.0+rpmDistanceOffset);
-        distanceToRPM.put(234.0,3500+rpmDistanceOffset);
-        distanceToRPM.put(244.0,3550.0+rpmDistanceOffset);
-        distanceToRPM.put(286.0, 3640.0+rpmDistanceOffset);
-
-        
+        distanceToRPM.put(133.0,5163.0);
+        distanceToRPM.put(200.0,4030.0);
+        distanceToRPM.put(282.0,4025.0);
+        distanceToRPM.put(200.0,4030.0);
         // OI must be constructed after subsystems. If the OI creates Commands
         //(which it very likely will), subsystems are not guaranteed to be
         // constructed yet. Thus, their requires() statements may grab null

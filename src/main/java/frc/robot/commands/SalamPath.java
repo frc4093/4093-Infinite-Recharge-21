@@ -46,14 +46,14 @@ public class SalamPath extends CommandGroup {
         addSequential(new SetStartPoint(.6, 5));
         addSequential(new GoToGroup(2.5, 5));
         addSequential(new GoToGroup(4, 2));
-        addSequential(new GoToGroup(8.2, 3)); // was 7,2
+        addSequential(new GoToGroup(8.5, 3)); // was 7,2
         addSequential(new GoToGroup(10, 5.5));
         // addSequential(new GoToGroup(11, 5.5));
         addSequential(new GoToGroup(12, 4));
         addSequential(new GoToGroup(10, 2.5));
-        addSequential(new GoToGroup(7.7, 5.5));
-        addSequential(new GoToGroup(3.5, 5.5));
+        addSequential(new GoToGroup(7.6, 5.75));
+        addSequential(new GoToGroup(4, 5.5));
         // addSequential(new GoToGroup(3, 3.25));
-        addSequential(new GoToGroup(1.2,2.5));
+        addSequential(new GoToGroup(1.5,3));
     } 
 }
